@@ -1,0 +1,4 @@
+nthreads,ncores,nworkers,nbytes,chunksize,cloud_source,system,format,runtime,throughput_MBps
+4,4,2,2867400000,114696000,ftp_duke,Ceres,gdal_vrt,74.17491722106934,38.65727266609631
+8,8,4,2867400000,114696000,ftp_duke,Ceres,gdal_vrt,58.323930978775024,49.16335287900075
+12,12,6,2867400000,114696000,ftp_duke,Ceres,gdal_vrt,63.22785806655884,45.35026312264982
