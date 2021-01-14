@@ -16,10 +16,20 @@ To perform a benchmark:
 5. If completed successfully, results will be pushed to the `../results` folder.
 5. Send Pull request with the new file in the `../results` folder and the new Jupyter Notebook with the analysis.
 
-Computational Environment:
 
-Code be run in this docker containers:
 
-https://hub.docker.com/r/rowangaffney/data_science_im_rs
+How to create / run a benchmark:
 
-or can be run in a conda environment with the correct packages installed.
+1. Log into Ceres, navigate to a directory you want to store a singularity container and pull the container like:
+  ```bash
+  singularity pull docker://rowangaffney/data_science_im_rs:latest
+  ```
+2. Log into JupyterHub with:<br><br>
+Node Type: `brief-low` (any should work though)<br>
+Number of Cores: `4`<br>
+Job Duration: `02:00:00`<br>
+Enter the full path to the container image: `/locatoin_you_stored_this_file/data_science_im_rs_latest.sif`<br>
+Container Exec Args: `--bind /etc/munge --bind /var/log/munge --bind /var/run/munge --bind /usr/bin/squeue --bind /usr/bin/scancel --bind /usr/bin/sbatch --bind /usr/bin/scontrol --bind /usr/bin/sinfo --bind /system/slurm:/etc/slurm --bind /run/munge --bind /usr/lib64/libslurm.so --bind /usr/lib64/libmunge.so.2 --bind /usr/lib64/slurm --bind /project --bind /lustre`
+
+3. Use git to download the content (see the top-level README)
+4. Copy the template file (./throughput_benchmarks/python/template.ipynb) and follow directions in the notebook.
